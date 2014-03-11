@@ -1,0 +1,17 @@
+{
+  "name": "primus-sample",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "primus": "~2.0.2",
+    "koa": "^0.5.1",
+    "ws": "^0.4.31",
+    "koa-static-cache": "^1.0.6"
+  }
+}

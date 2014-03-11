@@ -1,0 +1,10 @@
+<script src='/primus/primus.js'></script>
+<body>
+<h1>test</h1>
+<script>
+var primus = new Primus();
+primus.on('open', function open() {
+  console.log("open");
+});
+</script>
+</body>
