@@ -6,5 +6,25 @@ var primus = new Primus();
 primus.on('open', function open() {
   console.log("open");
 });
+primus.on('data', function(data) {
+  console.log("data : " + data);
+  var li = document.createElement('li');
+  li.innerHTML = JSON.stringify(data);
+  document.getElementById('list').appendChild(li);
+});
+var chat = function(){
+  if(event.keyCode == 13) {
+    var text = document.getElementById("box").value;
+    console.log(text);
+    primus.write(text);
+  }
+};
+
 </script>
+chat : 
+<input type="textbox" value="chat" id="box" name="box" onkeydown="chat()"/>
+
+
+<ul id="list">
+</ul>
 </body>
