@@ -9,8 +9,17 @@ var app = koa();
 app.use(serve("public"));
 
 var server = http.createServer(app.callback());
-var primus = new Primus(server);
-
+// default is ws
+//var primus = new Primus(server);
+// use engine.io
+// 1.0 higher does not work....
+var primus = new Primus(server, {transformer: 'engine.io'});
+// use browserchannel 
+//var primus = new Primus(server, {transformer: 'browserchannel'});
+// use sockjs 
+//var primus = new Primus(server, {transformer: 'sockjs'});
+// use socket.io 
+//var primus = new Primus(server, {transformer: 'socket.io'});
 
 // setting primus/primus.js
 primus.library();
